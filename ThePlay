@@ -1,0 +1,20 @@
+//here's the game plan, coach
+
+//front end-
+//we make a java GUI and make it cute, like me
+//maybe even JS or CSS if we feel like doing it
+//WAY different
+//takes:
+//class name
+//category number of graded
+//names
+//weights
+//grades
+//category number not graded
+//names
+//prints:
+//a cute message ab how fucked you are
+
+//back end-
+//takes graded categories and calculates current grade
+//makes a function or sum ab how fucked you are
