@@ -5,83 +5,71 @@ public class gClass {
 	// fields
 	private String name;
 	private int catNum;
-	private double[] catWeights;
 	private String[] catNames;
+	private double[] catWeights;
 	private double[] catGrades;
+	// butchered the constructor bc it didn't make sense to me -M 12.21
 
-	public gClass(String className, int categoryNumber) { // butchered the constructor bc it didn't make sense to me -M
-															// 12.21
-															// added this keywords - M 12.21
-		this.name = className;
-		this.catNum = categoryNumber;
-
+	public gClass(String className, int categoryNumber) {
+		setName(className);
+		setCatNum(categoryNumber);
 	}
+	// we may need to create another constructor if we have a case where we already have all the info for some reason -L 12.23
 
-	// method to populate categoryWeights and names -M 12.21
-	// takes a loooot of input -M 12.21
-	public void setCats() {
-		  Scanner input = new Scanner(System.in);
-		  //take dat input
-		  System.out.println("How many categories make up your grade?");
-		  this.catNum = input.nextInt();
-		  this.catWeights = new double[catNum];
-		  this.catNames = new String[catNum];
-		  System.out.println("What are those categories?");
-		  for (int i = 0; i < catNum; i++) {
-			  String name = input.next();
-			  input.nextLine();
-			  this.catNames[i] = name;
-		  }
-		  System.out.println("How much is each category worth? (%)");
-		  for (int i = 0; i < catNum; i++) {
-			  double weights = input.nextDouble();
-			  this.catWeights[i] = weights;
-		  }  
-		//populate those arrays -M 12.21
-		  input.close();
-	  }
+	// WE SHOULD MAKE A CLASS UnfinishedClass THAT EXTENDS THIS ONE WHICH HANDLES THE WHOLE "WHAT DO I NEED TO GET" OPERATION
 
-	public void setGrades() {
-		// same deal as setCats, just a lil seperate
-		Scanner input = new Scanner(System.in);
-		this.catGrades = new double[this.catNum];
-		for (int i = 0; i < this.catNames.length; i++) {
-			//THIS IS MAD BROKEN MY G -M 12.21
-			System.out.println("What was your grade on the " + this.catNames[i] + "? ");
-			double myGrade = input.nextDouble();
-			// populate catGrades
-			this.catGrades[i] = myGrade;
-		}
-		input.close();
-	}
-
-	// get methods for all the categories -M 12.21
+	// getter methods -M 12.21
 	public String getName() {
 		return this.name;
 	}
 
-	public double getWeights(int index) {
-		return this.catWeights[index];
+	public double [] getWeights() {
+		return this.catWeights;
 	}
 
-	public String getCatNames(int index) {
-		return this.catNames[index];
+	public String [] getCatNames() {
+		return this.catNames;
 	}
 
-	public double getGrades(int index) {
-		return this.catGrades[index];
+	public double [] getCatGrades() {
+		return this.catGrades;
 	}
 
-	public int getNum() {
+	public int getCatNum() {
 		return this.catNum;
 	}
 
-	public static String toString(gClass grades) {
-		System.out.println("In your class," + grades.getName() + ", you scored");
+	// setter methods -L 12.23
+	public void setName(String n) {
+		this.name = n;
+	}
+
+	public void setCatWeights(double [] cWs) {
+		this.catWeights = cWs;
+	}
+
+	public void setCatNames(String [] cNs) {
+		this.catNames = cNs;
+	}
+
+	public void setCatGrades(double [] cGs) {
+		this.catGrades = cGs;
+	}
+
+	public void setCatNum(int n) {
+		this.catNum = n;
+	}
+
+
+	//looks good to me, except toString() should never be static. It uses
+	//the attributes of this Instance of the object to print it, so it should
+	//be non static. -L 12.23
+	public String toString() {
+		System.out.println("In your class," + this.name + ", you scored");
 		String myReturn = "";
-		for (int i = 0; i < grades.getNum(); i++) {
-			myReturn += (grades.getGrades(i) + "on the" + grades.getCatNames(i) + " which is worth"
-					+ grades.getWeights(i) + "%.");
+		for (int i = 0; i < this.catNum; i++) {
+			myReturn += (this.catNames[i] + "on the" + this.catGrades[i] + " which is worth"
+					+ this.catWeights[i] + "%.");
 		}
 		return myReturn;
 	}
