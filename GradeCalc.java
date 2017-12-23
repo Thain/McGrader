@@ -21,9 +21,10 @@ public class GradeCalc {
     double [] catWeights = new double[catNum];
     double [] catGrades = new double[catNum];
 
+    input.nextLine();
     System.out.println("What are those categories?");
     for (int i = 0; i < catNum; i++)
-      catNames[i] =   input.nextLine();
+      catNames[i] = input.nextLine();
     for (int i = 0; i < catNum; i++) {
         System.out.println("What is the weighting on the " + catNames[i] + " category? ");
           catWeights[i] = input.nextDouble();

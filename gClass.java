@@ -65,10 +65,9 @@ public class gClass {
 	//the attributes of this Instance of the object to print it, so it should
 	//be non static. -L 12.23
 	public String toString() {
-		System.out.println("In your class," + this.name + ", you scored");
-		String myReturn = "";
+		String myReturn = "In your class, " + this.name + " , you scored ";
 		for (int i = 0; i < this.catNum; i++) {
-			myReturn += (this.catNames[i] + "on the" + this.catGrades[i] + " which is worth"
+			myReturn += (this.catNames[i] + " on the " + this.catGrades[i] + " which is worth "
 					+ this.catWeights[i] + "%.");
 		}
 		return myReturn;
