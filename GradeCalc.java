@@ -34,10 +34,7 @@ public class GradeCalc {
         catGrades[i] = input.nextDouble();
       }
     input.close();
-    gClass firstClass = new gClass(name, catNum);
-    firstClass.setCatNames(catNames);
-    firstClass.setCatWeights(catWeights);
-    firstClass.setCatGrades(catGrades);
+    gClass firstClass = new gClass(name, catNum, catNames, catWeights, catGrades);
     System.out.println(firstClass.toString());
   }
 
