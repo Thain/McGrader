@@ -1,6 +1,7 @@
 import java.util.Scanner;
-
-public class GradeCalc {
+//yeah can I get it in uhhhhhhh a applet? to run it from the front end??? -M Christmas
+import javax.swing.*;
+public class GradeCalc extends JApplet{
   //here's the main method. Note that all this scanner stuff should eventually
   //be deleted because we want to make a JS/CSS gui to do that work for us,
   //and this main method should just be passed that info. -L 12.23

@@ -1,9 +1,8 @@
-public class Tester{
-	//just a class to make sure that things work -M 12.21
-	public static void main(String[] args) {
-		gClass Comp250 = new gClass("Calc", 3);
-		myClass.setCats();
-		myClass.setGrades();
-		gClass.toString(myClass);
+import java.applet.*;
+import java.awt.*;
+public class Tester extends Applet{
+	//I'll take applets for 400, alex -M CHRISTMAS
+	public void paint(Graphics g) {
+		g.drawString("This is an applet.", 40, 20);
 	}
 }
