@@ -8,9 +8,22 @@
 
 <h1>McGucked</h1>
 <p>How's school going?</p>
-	<div>
-		<APPLET CODE = "Tester.class" WIDTH = "800" HEIGHT = "500">
-		</APPLET>
-	</div>
+<!-- Getting acquainted with functions in js -->
+<input type="text" id="userInput"=>talk to me</input>
+<button onclick="test()">Submit</button>
+<input type="text" id="userInput2"=>Pray for me</input>
+<button onclick="test()">Ye</button>
+<!-- can't run test twice for whatever reason -->
+<p id="demo"></p>
+<div>
+	<applet code = "Tester.class" width=300 height=200></applet>
+</div>
+<script>
+	function test(){
+		var userInput = document.getElementById("userInput").value;
+		document.getElementById("demo").innerHTML = userInput;
+	}
+</script>
+<h1> Pray For Me </h1>
 </body>
 </html>
