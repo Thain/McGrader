@@ -1,10 +1,11 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class GradeCalc {
   //here's the main method. Note that all this scanner stuff should eventually
   //be deleted because we want to make a JS/CSS gui to do that work for us,
   //and this main method should just be passed that info. -L 12.23
-  public static void main(String [] args)
+  public static void main(String [] args) throws IOException
   {
     System.out.println("a h a h a h a h a  you're fucked anyway fam");
     Scanner input = new Scanner(System.in);
@@ -29,13 +30,26 @@ public class GradeCalc {
         System.out.println("What is the weighting on the " + catNames[i] + " category? ");
           catWeights[i] = input.nextDouble();
         }
-    for (int i = 0; i < catNum; i++) {
-      System.out.println("What was your grade on the " + catNames[i] + "? ");
-        catGrades[i] = input.nextDouble();
-      }
+    GClass myclass = null;                        // create an object it'll refer to whichever subclasses we choose (woo polymorphism)
+    //NOW FOR THE FUN PART
+    System.out.println("Have you received the grades back for your class yet? y/n");
+    char yn = (char) System.in.read();
+
+    switch(yn){                           //this one's for you big boy ;)
+    case 'y':
+      for (int i = 0; i < catNum; i++) {   //for loop collects grade for each category
+        System.out.println("What was your grade on the " + catNames[i] + "? ");
+          catGrades[i] = input.nextDouble();
+        }
+      myclass = new FClass(name, catNum, catNames, catWeights, catGrades);
+      break;
+    case 'n':
+      // gotta take info for like 80 trillion things and create a uclass object.
+      //myclass = new UClass(name, catNum, catNames, catWeights, catGrades);
+      break;
+  }
+    System.out.println(myclass.toString());
     input.close();
-    gClass firstClass = new gClass(name, catNum, catNames, catWeights, catGrades);
-    System.out.println(firstClass.toString());
   }
 
 }
