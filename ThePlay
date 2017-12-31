@@ -3,6 +3,9 @@
 //front end-
 //we make a java GUI and make it cute, like me
 //maybe even JS or CSS if we feel like doing it
+//aight bruv JS and CSS are two different thangs
+CS is for being cute af
+JS is for puttin in that (ugh, yeah, put in) WERK
 //WAY different
 //takes:
 //class name
@@ -21,3 +24,16 @@
 //takes graded categories and calculates current grade
 //makes a function or sum ab how fucked you are
 //different functionalities (what do I need on final, what's my final grade, etc)
+
+
+Doing it way different - A brief interlude by Marc Mekhanik
+k so my pal suggested that we do the functions and what not on the front end
+for a couple reasons
+1. This way, everything executes on the client side, which is more efficient for the server
+2. Doing the functions in Java requires the client to have Java installed, 
+whereas doing it in javascript allows it to work in every browser
+3. Since JS is a web language, it plays better with HTML
+4. Java has a lot of security vulnerabilities in the way it transfers data, so it has little support
+(my friend told me this I don't know why it's vulnerable)
+5. I personally have no idea how to run the java in the html. Something about applets. 
+So I've been and will to continue to be working with JS.
