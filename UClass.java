@@ -1,19 +1,15 @@
-public class UClass extends gClass{
+public class UClass extends FClass{
 
   // fields
   //ungraded categories of grade
   private int uNum;
-  private String[] uNames;
-  private double[] uWeights;
-  private double[] uGrades;
-  //graded categories of grade
-  private int gNum;
-  private String[] gNames;
-  private double[] gWeights;
-  private double[] gGrades;
+  private ArrayList<String> uNames;
+  private Arraylist<double> uWeights;
+  private Arraylist<double> uGrades;
+  private Arraylist<double> fGrades;
 
   //constructor
-  public UClass(String name, int catNum, String[] catNames, double[] catWeights, double[] catGrades, int uNum, String [] uNames, double [] uWeights, double [] uGrades){
+  public UClass(String name, int catNum, ArrayList<String> catNames, Arraylist<double> catWeights, Arraylist<double> catGrades, int uNum){
     super(name, catNum, catNames, catWeights);
     setUNum(uNum);
     setUNum(uNames);
@@ -22,69 +18,44 @@ public class UClass extends gClass{
   }
 
   //getters
-  public double [] getUWeights() {
+  public Arraylist<double> getUWeights() {
     return this.uWeights;
   }
 
-  public String [] getUNames() {
+  public Arraylist<String> getUNames() {
     return this.uNames;
   }
 
-  public double [] getUGrades() {
+  public Arraylist<double> getUGrades() {
     return this.uGrades;
   }
 
+  public Arraylist<double> getFGrades() {
+    return this.fGrades;
+  }
   public int getUNum() {
     return this.uNum;
   }
 
-  public double [] getGWeights() {
-    return this.gWeights;
-  }
-
-  public String [] getGNames() {
-    return this.gNames;
-  }
-
-  public double [] getGGrades() {
-    return this.gGrades;
-  }
-
-  public int getGNum() {
-    return this.gNum;
-  }
-
   // setters
-  public void setUWeights(double [] uWs) {
+  public void setUWeights(Arraylist<double> uWs) {
     this.uWeights = uWs;
   }
 
-  public void setUNames(String [] uNs) {
+  public void setUNames(ArrayList<String> uNs) {
     this.uNames = uNs;
   }
 
-  public void setUGrades(double [] uGs) {
+  public void setUGrades(Arraylist<double> uGs) {
     this.uGrades = uGs;
+  }
+
+  public void setFGrades(Arraylist<double> fGs) {
+    this.fGrades = fGs;
   }
 
   public void setUNum(int un) {
     this.uNum = un;
-  }
-
-  public void setGWeights(double [] gWs) {
-    this.gWeights = gWs;
-  }
-
-  public void setGNames(String [] gNs) {
-    this.gNames = gNs;
-  }
-
-  public void setGGrades(double [] gGs) {
-    this.gGrades = gGs;
-  }
-
-  public void setGNum(int gn) {
-    this.gNum = gn;
   }
 
 }

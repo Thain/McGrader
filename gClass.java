@@ -1,15 +1,15 @@
 import java.util.Scanner;
-
+import java.util.ArrayList;
 public class GClass {
 
 	// fields
 	private String name;
 	private int catNum;
-	private String[] catNames;
-	private double[] catWeights;
+	private Arraylist<String> catNames;
+	private Arraylist<double> catWeights;
 
 	//constructor
-	public GClass(String className, int categoryNumber, String[] categoryNames, double[] categoryWeights) {
+	public GClass(String className, int categoryNumber, Arraylist<String> categoryNames, Arraylist<double> categoryWeights) {
 		setName(className);
 		setCatNum(categoryNumber);
 		setCatNames(categoryNames);
@@ -21,11 +21,11 @@ public class GClass {
 		return this.name;
 	}
 
-	public double [] getCatWeights() {
+	public Arraylist<double> getCatWeights() {
 		return this.catWeights;
 	}
 
-	public String [] getCatNames() {
+	public Arraylist<String> getCatNames() {
 		return this.catNames;
 	}
 
@@ -38,17 +38,17 @@ public class GClass {
 		this.name = n;
 	}
 
-	public void setCatWeights(double [] cWs) {
+	public void setCatWeights(Arraylist<double> cWs) {
 	 	double catSum = 0;
 		this.catWeights = cWs;
 		for(int i = 0; i<this.catNum; i++)				// catSum is the summed weights of all the categories
-			catSum += cWs[i];
+			catSum += cWs.get(i);
 		if(catSum != 100)													// if the sum isn't 100, we can easily adjust it to make it percent based.
 			for(int i = 0; i<this.catNum; i++)
-				catWeights[i] = (catWeights[i]*100)/catSum; // for every weight, perform this operation to come to new weight. ((20*100)/60 = 33.3333 ~ 33%)
+				catWeights.set(i, (catWeights.get()*100)/catSum); // for every weight, perform this operation to come to new weight. ((20*100)/60 = 33.3333 ~ 33%)
 	}
 
-	public void setCatNames(String [] cNs) {
+	public void setCatNames(Arraylist<String> cNs) {
 		this.catNames = cNs;
 	}
 

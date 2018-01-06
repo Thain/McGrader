@@ -45,7 +45,9 @@ public class GradeCalc {
       break;
     case 'n':
       // gotta take info for like 80 trillion things and create a uclass object.
-      //myclass = new UClass(name, catNum, catNames, catWeights, catGrades);
+      // take unum (this will inform the breakpoint between ungraded and graded)
+      // we will take info on the graded parts first. this way we can split the array by the first unum elements and pass the first array 
+      // myclass = new UClass(name, catNum, catNames, catWeights, catGrades);
       break;
   }
     System.out.println(myclass.toString());

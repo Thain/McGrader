@@ -3,11 +3,11 @@ import java.math.*;
 public class FClass extends GClass{
 
   //fields
-  private double[] catGrades;
+  private Arraylist<double> catGrades;
   private double fGrade;
 
   //constructor
-  public FClass(String className, int categoryNumber, String[] categoryNames, double[] categoryWeights, double [] categoryGrades){
+  public FClass(String className, int categoryNumber, Arraylist<String> categoryNames, Arraylist<double> categoryWeights, Arraylist<double> categoryGrades){
     super(className, categoryNumber, categoryNames, categoryWeights);
     setCatGrades(categoryGrades);
     calcFGrade();
@@ -17,9 +17,9 @@ public class FClass extends GClass{
   public double calcFGrade()
 	{
 		this.fGrade = 0;
-    double [] tCW = super.getCatWeights();
+    Arraylist<double> tCW = super.getCatWeights();
 		for(int i = 0; i < super.getCatNum(); i++)
-			fGrade += this.catGrades[i]*(tCW[i]/100);
+			fGrade += this.catGrades.get(i)*(tCW.get(i)/100);
   	if(fGrade != 100){
   	BigDecimal bd = new BigDecimal(fGrade);
 		bd = bd.round(new MathContext(3));
@@ -30,7 +30,7 @@ public class FClass extends GClass{
 	}
 
   //getters
-  public double [] getCatGrades() {
+  public Arraylist<double> getCatGrades() {
 		return this.catGrades;
 	}
 
@@ -39,7 +39,7 @@ public class FClass extends GClass{
   }
 
   //setters ... FGrade has no setter because it's a calculated value.
-  public void setCatGrades(double [] cGs) {
+  public void setCatGrades(Arraylist<double> cGs) {
 		this.catGrades = cGs;
 	}
 
@@ -49,15 +49,15 @@ public class FClass extends GClass{
   public String toString() {
   	String myReturn = "In your class, " + super.getName() + ", you scored ";
   	int i = 0;
-    String [] tCN = super.getCatNames();
-    double [] tCW = super.getCatWeights();
+    Arraylist<String> tCN = super.getCatNames();
+    Arraylist<double> tCW = super.getCatWeights();
 		while(i < super.getCatNum()-1) {
-  		myReturn += (this.catGrades[i] + " on the " + tCN[i] + " which is worth "
-  				+ tCW[i] + "%,");
+  		myReturn += (this.catGrades.get(i) + " on the " + tCN.get(i) + " which is worth "
+  				+ tCW.get(i) + "%,");
   		i++;
   		}
-		myReturn += (" and "+ this.catGrades[i] + " on the " + tCN[i] + " which is worth "
-        + tCW[i] + "%. Your final grade is " + fGrade + ".");
+		myReturn += (" and "+ this.catGrades.get(i) + " on the " + tCN.get(i) + " which is worth "
+        + tCW.get(i) + "%. Your final grade is " + fGrade + ".");
 		return myReturn;
   	}
 }
