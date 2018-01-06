@@ -5,11 +5,11 @@ public class UClass extends FClass{
   private int uNum;
   private ArrayList<String> uNames;
   private Arraylist<double> uWeights;
-  private Arraylist<double> uGrades;
-  private Arraylist<double> fGrades;
+  private LinkedList<double> uGrades;
+  private LinkedList<double> fGrades;
 
   //constructor
-  public UClass(String name, int catNum, ArrayList<String> catNames, Arraylist<double> catWeights, Arraylist<double> catGrades, int uNum){
+  public UClass(String name, int catNum, ArrayList<String> catNames, Arraylist<double> catWeights, LinkedList<double> catGrades, int uNum){
     super(name, catNum, catNames, catWeights);
     setUNum(uNum);
     setUNum(uNames);
